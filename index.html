@@ -26,6 +26,7 @@
 
     .container-2 {
       background-color: #000;
+      height: 120vh;
     }
 
     .screen {
@@ -85,7 +86,6 @@
     const displayTL = gsap.timeline({
       scrollTrigger: {
         trigger: '.box',
-        // markers: true,
         start: 'top 45%',
         end: 'top 35%',
         scrub: 0.5
@@ -111,6 +111,21 @@
     .to('.screen', {
       width: 0,
       height: 0
+    })
+    .to('.monster', {
+      opacity: 0
+    })
+    .to('.box', {
+      opacity: 0
+    }, '<')
+
+    const battleStartTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.monster',
+        start: 'top 52%',
+        end: 'top 50%',
+        scrub: true
+      }
     })
   </script>
 </body>
